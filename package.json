@@ -6,6 +6,8 @@
     "@wdio/cli": "^7.1.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/node": "^7.13.12",
     "@babel/register": "^7.13.8",
     "@wdio/jasmine-framework": "^7.1.2",
     "@wdio/junit-reporter": "^7.1.2",
