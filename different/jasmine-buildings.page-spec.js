@@ -47,8 +47,8 @@ describe ('Buildings page', () => {
 
     });
 
-    //it('Search smth', () => {
-    //}
+    // it('Search smth', () => {
+    // })
 });
 
 
@@ -59,13 +59,13 @@ describe ('Create new building', () => {
         createBtn.click();
     });
 //!check uploading
-    it('Upload photo', () => {
-        const selectBtn = $(buildings.selectBtn);
-        selectBtn.click();
-        const path = require('path');
-        const filePath = path.join(__dirname, '../../testData/image.jpg');
+//     it('Upload photo', () => {
+//         const selectBtn = $(buildings.selectBtn);
+//         selectBtn.click();
+//         const path = require('path');
+//         const filePath = path.join(__dirname, '../../testData/image.jpg');
     // .waitForDisplayed();
-    });
+    // });
 
     it('Choose type of building', () => {
         const typeOfBuilding = $(buildings.typeOfBuilding);
@@ -77,7 +77,7 @@ describe ('Create new building', () => {
 
     it('Fill needed fields', () => {
         const name = $(buildings.nameInput);
-        name.addValue('Big building')
+        name.addValue('Test building')
         browser.pause(100);
 
         const country = $(buildings.countryInput);
@@ -126,6 +126,10 @@ describe ('Create new building', () => {
         diningRooms.click();
         browser.pause(100);
 
+        //close dropdown by ESC
+        browser.keys('\uE00C')
+
+
     });
 
     it('Fill additional parameters', () => {
@@ -153,15 +157,17 @@ describe ('Create new building', () => {
         dining.addValue('3');
         browser.pause(500);
 
+
     });
 
     it('Click Create button', () => {
         const create = $(buildings.create);
+        create.scrollIntoView();
+        create.click();
         //create.waitForClickable({ timeout: 3000 });
         //create.isDisplayed()
         //driver.executeScript('arguments[0].click()', create)
         //driver.findElement( By.Path('//div[contains(text(),\'Create\')]') ).click();
-        browser.elementClick(create)
-        //create.click();
+        //browser.elementClick(create)
     });
 })

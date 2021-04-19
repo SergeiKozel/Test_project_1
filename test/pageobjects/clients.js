@@ -14,8 +14,8 @@ class clients
     get loonaBox()          { return $('//span[contains(text(),\'Loona Business\')]') }
     get technoBtn()         { return $('//span[contains(text(),\'TechnoPark West\')]') }
 
-    //get typeOfClientsBtn()  { return $('//mat-label[contains(text(),\'Type of client\')]') }
-        get typeOfClientsBtn()  { return $('//body/cactussoft-root[1]/cactussoft-container[1]/div[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/cactussoft-create-client[1]/div[1]/form[1]/div[1]/div[2]/mat-form-field[2]/div[1]/div[1]') }
+    get typeOfClientsBtn()  { return $('//body/cactussoft-root[1]/cactussoft-container[1]/div[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/cactussoft-create-client[1]/div[1]/form[1]/div[1]/div[2]/mat-form-field[2]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[2]') }
+    //get typeOfClientsBtn()  { return $('//body/cactussoft-root[1]/cactussoft-container[1]/div[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/cactussoft-create-client[1]/div[1]/form[1]/div[1]/div[2]/mat-form-field[2]/div[1]/div[1]') }
 
     get typeBusiness()      { return $('//span[contains(text(),\'Business\')]') }
     get typeResidential()   { return $('//span[contains(text(),\'Residential\')]') }
@@ -29,5 +29,9 @@ class clients
     //get activeButton()    { return $('//body/cactussoft-root[1]/cactussoft-container[1]/div[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/cactussoft-create-client[1]/div[1]/form[1]/div[2]/mat-radio-group[1]/mat-radio-button[1]/label[1]/span[1]/span[1]') }
 
     get createBtn()         { return $('//div[contains(text(),\'Create\')]') }
+
+    get logoText()          { return $('/html/body/cactussoft-root/cactussoft-container/div/mat-sidenav-container/mat-sidenav-content/cactussoft-create-client/div/form/div[1]/div[1]/cactussoft-uploader/div/div[2]/span[1]')}
+
+
    }
 module.exports = new clients();

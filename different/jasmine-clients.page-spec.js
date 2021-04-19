@@ -1,5 +1,5 @@
-const clients = require('../pageobjects/clients');
-const {links}  = require('../links/links');
+const clients = require('../test/pageobjects/clients');
+const {links}  = require('../test/links/links');
 
 describe ('Clients page', () => {
 //!will be changed after login page readiness
@@ -48,15 +48,13 @@ describe('Create new client', () => {
     });
 
 //!check uploading
-//     it('Upload photo', () => {
-//         const selectBtn = $(clients.selectBtn);
-//         selectBtn.waitForDisplayed();
-//         selectBtn.click();
-//         browser.pause(100);
-//         const path = require('path');
-//         const filePath = path.join(__dirname, '../../testData/client.jpg');
-//         // .waitForDisplayed();
-//     });
+    it('Upload photo', () => {
+        const selectBtn = $(clients.selectBtn);
+        selectBtn.click();
+        const path = require('path');
+        const filePath = path.join(__dirname, '../../testData/client.jpg');
+        // .waitForDisplayed();
+    });
 
     it('Choose buildings', () => {
         const buildingBtn = $(clients.buildingsBtn);
@@ -65,33 +63,51 @@ describe('Create new client', () => {
 
         const holidayBox = $(clients.holidayBox);
         holidayBox.click();
+        browser.pause(100);
 
         const loonaBox = $(clients.loonaBox);
         loonaBox.click();
+        browser.pause(100);
 
         const technoBtn = $(clients.technoBtn);
         technoBtn.click();
+        browser.pause(100);
+
+      //should close dropdown
+        browser.keys('\uE00C')
+        browser.pause(100);
+
+
     });
 
     it('Choose type of client', () => {
         const typeOfClientsBtn = $(clients.typeOfClientsBtn);
         typeOfClientsBtn.click();
-        const typeBusiness = $(clients.typeBusiness);
-        typeBusiness.click();
+
+        const typeResidential = $(clients.typeResidential);
+        typeResidential.click();
+
+        browser.keys('\uE00C')
+        browser.pause(500);
+
     });
 
     it('Fill needed fields', () => {
         const nameInput = $(clients.nameInput);
         nameInput.addValue('Sergey QA');
+        browser.pause(500);
 
         const emailInput = $(clients.emailInput);
         emailInput.addValue('automation@test.com');
+        browser.pause(500);
 
         const phoneInput = $(clients.phoneInput);
         phoneInput.addValue('+375251234567')
+        browser.pause(500);
 
         const descriptionInput = $(clients.descriptionInput);
         descriptionInput.addValue('400 symbols')
+        browser.pause(1000);
     });
 
     it('Click Create button', () => {
